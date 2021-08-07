@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='pos-receipt-contact']" position="after">
+            <div class="pos-receipt-contact" >
+                <t t-set="client" t-value="receipt.client" />
+                <t t-if="!!client">
+                    <div style="text-align: center;">
+                        -------------------------
+                    </div>
+                    <table class="text-align-start">
+                        <colgroup>
+                            <col width='20%' />
+                            <col width='80%' />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td><strong>Client: </strong></td>
+                                <td><span t-esc="client.name" /></td>
+                            </tr>
+                            <tr t-if="client.phone">
+                                <td><strong>phone: </strong></td>
+                                <td><span t-esc="client.phone" /></td>
+                            </tr>
+                            <tr t-if="client.mobile">
+                                <td><strong>mobile: </strong></td>
+                                <td><span t-esc="client.mobile" /></td>
+                            </tr>
+                            <tr t-if="client.street">
+                                <td><strong>street: </strong></td>
+                                <td><span t-esc="client.street" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
+        </xpath>
+    </t>
+
+</templates>

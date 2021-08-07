@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <!-- <link rel="stylesheet" type="text/css" href="/pos_multi_barcodes/static/src/css/style.css"/> -->
+                <script type="text/javascript" src="/pos_address_to_street/static/src/js/model.js"></script>
+                <script type="text/javascript" src="/pos_address_to_street/static/src/js/ProductScreen.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>
